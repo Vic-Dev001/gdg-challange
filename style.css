@@ -44,7 +44,7 @@ body{
 }
 .connect{
     animation-name: uppermode;
-    animation-duration: 1s; 
+    animation-duration: .4s; 
     animation-timing-function: ease-in-out; 
     animation-delay: 0;
     animation-direction: alternate;
@@ -53,7 +53,7 @@ body{
 }
 .learn{
     animation-name: uppermode ;
-    animation-duration: 2s; 
+    animation-duration: .6s; 
     animation-timing-function: ease-in-out; 
     animation-delay: 0;
     animation-direction: alternate;
@@ -62,7 +62,7 @@ body{
 }
 .grow{
     animation-name: uppermode ;
-    animation-duration: 3s; 
+    animation-duration: .8s; 
     animation-timing-function: ease-in; 
     animation-delay: 0;
     animation-direction: alternate;
@@ -76,17 +76,20 @@ body{
     0%{
         transform: translateY(30rem);
     }
-    80%{
-        transform: translateY(-5rem);
-    }
-    100%{
-        transform: translateY(3rem);
-    }
+
 }
 
 .logo{
     position: relative;
-    padding: 2rem 0;
+    top:2px;
+
+}
+@media only screen and (max-width: 600px){
+    .logo{
+        width: 70%;
+        margin-left: 1rem;
+        top: -2rem;
+    }
 }
 
 
@@ -110,6 +113,12 @@ body{
     .navigation{
         display: block;
         overflow: hidden;
+    }
+}
+@media only screen and (max-width: 990px){
+    .navigation{
+        display: block;
+
     }
 }
 .naviagtion__checkbox{
@@ -136,7 +145,7 @@ body{
     height: 5rem;
     width: 5rem;
     position: fixed;
-    top: 6rem;
+    top: 2rem;
     right: 1rem;
     border-radius: 50%;
     z-index: 1500;
@@ -149,7 +158,7 @@ body{
     border-radius: 50%;
     background-image:linear-gradient(to left bottom, #0F9D58, #4587F4);
     position: fixed;
-    top: 7rem;
+    top: 3rem;
     right: 2rem;
     transition: transform .8s;
     z-index: 1000;
@@ -278,6 +287,11 @@ body{
 
     }
   }
+  @media only screen and (max-width: 990px){
+    .menus{
+        display: none;
+    }
+}
 .menu:link,
 .menu:visited{
     padding: 2rem;
@@ -300,11 +314,11 @@ body{
 .menu::after{
     content: "";
     position: absolute;
-    top: 1rem;
+    top: 0px;
     left: 0px;
     right: 0px;
     bottom: 0px;
-    border-top: 2px solid #0F9D58;
+    border-bottom: 2px solid #0F9D58;
     z-index: 2;
     opacity: 0;
     transition: all .3s ease-in;
@@ -359,6 +373,27 @@ body{
     position: relative;
     padding: 24rem 0;
     background-color: #fbfbfb;
+    animation-name:popout;
+    animation-duration: 25s;
+    animation-timing-function: ease-out; 
+    animation-direction: alternate;
+    animation-fill-mode: none;
+    animation-play-state: running;
+}
+@keyframes popout {
+    0%{
+        opacity: 0;
+
+    }
+    5%{
+        opacity: 0;
+    }
+    10%{
+        transform: translateX(-3rem);
+        opacity: 1;
+        
+    }
+
 }
 @media only screen and (max-width: 600px) {
     .network{
@@ -494,10 +529,10 @@ body{
     top:33rem ;
     left: 36rem;
     animation-name: stretch;
-    animation-duration: 1.2s; 
+    animation-duration: 1.5s; 
     animation-timing-function: ease-out; 
     animation-delay: 0;
-    animation-direction: alternate;
+    animation-direction: alternate-reverse;
     animation-iteration-count: infinite;
     animation-fill-mode: none;
     animation-play-state: running;
@@ -516,10 +551,10 @@ body{
     top:9rem ;
     left: 67.5rem;
     animation-name: stretch;
-    animation-duration: 1.2s; 
+    animation-duration: 1.5s; 
     animation-timing-function: ease-out; 
     animation-delay: 0;
-    animation-direction: alternate;
+    animation-direction: alternate-reverse;
     animation-iteration-count: infinite;
     animation-fill-mode: none;
     animation-play-state: running;
@@ -714,11 +749,12 @@ body{
 }
 .cd{
     margin-left: 8rem;
-    padding: 2rem 4rem;
+    padding: 2rem 20rem;
 }
  @media only screen and (max-width: 600px) {
     .cd{
         margin: 0 -2rem;
+        padding: 2rem 6rem;
 
     }
 }
@@ -865,7 +901,8 @@ body{
     overflow-x: scroll;
     scroll-behavior: smooth;
 }
-.last-cont::-webkit-scrollbar{
+.last-cont::-webkit-scrollbar,
+.last-cont::-moz-scrollbar{
     display: none;
     
 }
@@ -912,21 +949,11 @@ body{
 }
 
 @keyframes movingLeftRight {
-    0% {
-      transform: translateX(-45rem);
-    }
-    40% {
-        transform: translateX(45rem);
-    }
-    80% {
-        transform: translateX(-80rem);
-    }
-    100% {
-        transform: scale(-45rem);
-       
-
-      
-    }
+    10%{transform: translateX(-200px)}
+    25%{transform: translateX(-00px)}
+    50%{transform: translateX(-1000px)}
+    75%{transform: translateX(-350px)}
+    100%{transform: translateX(-200px)}
   }
 
   .animated-cont{
@@ -1007,10 +1034,23 @@ body{
 .cp{
     display: flex;
     flex: auto;
-    margin-left: 2rem;
+    margin-left: 9rem;
+}
+@media only screen and (max-width: 600px){
+    .cp{
+        width: 70%;
+        margin-left: -1rem;
+    }
 }
 .ablogo{
     object-fit: contain;
+
+}
+@media only screen and (max-width: 600px){
+    .ablogo{
+        width: 50%;
+        
+    }
 }
 .c{
     margin-top: 1rem;
@@ -1018,17 +1058,23 @@ body{
     margin-left: 2rem;
     color: #4587F4;
 }
+@media only screen and (max-width: 600px){
+    .c{
+        font-size: 9px;
+        
+    }
+}
 .socialhandles{
     display: flex;
     flex: auto;
     justify-content: flex-end;
     margin-right: 8rem;
-    margin-top: -4rem;
+    margin-top: -3rem;
 }
 @media only screen and (max-width: 600px) {
     .socialhandles{
         margin-right: 2rem;
-        margin-top: -3rem;
+        margin-top: -2.5rem;
       
 
     }
@@ -1042,7 +1088,7 @@ body{
 .fa-angle-up{
     position: fixed;
     bottom: 15rem;
-    left:120rem;
+    left:128rem;
     font-size: 8rem;
     color: #0F9D58;
     z-index: 3000;
